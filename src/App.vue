@@ -3,7 +3,6 @@ import Btn_base from './components/btn_base.vue';
 
 const onlineStatus = "away";
 
-
 </script>
 
 <template>

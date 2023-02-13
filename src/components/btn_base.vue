@@ -20,6 +20,7 @@ div {
 
 .btn {
     width: 100px;
+    height: 35px;
     padding: 5px 10px;
     margin: 10px;
     border-radius: 5px;
@@ -44,7 +45,7 @@ div {
 
 
     &:hover {
-        box-shadow: 0px 0px 10px rgba(197, 193, 193, 0.726);
+
     }
 
     span {

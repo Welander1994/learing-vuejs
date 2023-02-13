@@ -1,13 +1,14 @@
 <script setup>
 
 defineProps({
-    buttonText: String
+    buttonText: String,
+    likes: Number
 })
 </script>
 
 <template>
 
-    <button>{{ buttonText }}</button>
+    <button>{{ buttonText }} <span v-if="likes"> {{ likes }} </span></button>
 
 </template>
 
@@ -28,6 +29,7 @@ div {
     display: flex;
     justify-content: center;
     align-items: center;
+    white-space: nowrap;
 
     transition: .5s;
     cursor: pointer;
@@ -45,6 +47,27 @@ div {
         box-shadow: 0px 0px 10px rgba(197, 193, 193, 0.726);
     }
 
+    span {
+        position:relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+       font-size: 12px;
+
+        top: -20px;
+        left: 20px;
+        
+        min-width: 20px;
+        min-height: 20px;
+
+        aspect-ratio: 1;
+
+        padding: 2px;
+        border-radius: 25px;
+        background-color: red;
+
+    }
 
 
     &.online {

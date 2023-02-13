@@ -8,7 +8,7 @@ const onlineStatus = "away";
 <template>
   <div>
     <Btn_base class="btn" :class="onlineStatus" buttonText="offline"></Btn_base>
-    <Btn_base class="btn" buttonText="Join us"></Btn_base>
+    <Btn_base class="btn" buttonText="Join us" likes=""></Btn_base>
   </div>
 </template>
 

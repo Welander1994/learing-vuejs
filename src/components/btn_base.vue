@@ -27,6 +27,7 @@ div {
     border-width: 2px;
     background-color: rgb(24, 202, 24);
     border-color: transparent;
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -49,15 +50,15 @@ div {
     }
 
     span {
-        position:relative;
+        position:absolute;
         display: flex;
         justify-content: center;
         align-items: center;
         
        font-size: 12px;
+        top: -12px;
+        right: -12px;
 
-        top: -20px;
-        left: 20px;
         
         min-width: 20px;
         min-height: 20px;

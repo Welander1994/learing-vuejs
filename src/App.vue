@@ -1,14 +1,15 @@
 <script setup>
 import Btn_base from './components/btn_base.vue';
 
-const onlineStatus = "away";
+const onlineStatus = "offline";
+const likes = 21;
 
 </script>
 
 <template>
   <div>
-    <Btn_base class="btn" :class="onlineStatus" buttonText="offline"></Btn_base>
-    <Btn_base class="btn" buttonText="Join us" likes=""></Btn_base>
+    <Btn_base class="btn" :class="onlineStatus" :buttonText="onlineStatus"></Btn_base>
+    <Btn_base class="btn" buttonText="Messages" :likes="likes"></Btn_base>
   </div>
 </template>
 

@@ -2,7 +2,7 @@
 import Btn_base from './components/btn_base.vue';
 
 const onlineStatus = "offline";
-const likes = 21;
+const likes = null;
 
 </script>
 

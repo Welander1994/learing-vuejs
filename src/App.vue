@@ -1,8 +1,8 @@
 <script setup>
 import Btn_base from './components/btn_base.vue';
 
-const onlineStatus = "away";
-const likes = null;
+const onlineStatus = "offline";
+const likes = 100;
 
 </script>
 

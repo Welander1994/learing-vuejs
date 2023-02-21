@@ -1,7 +1,7 @@
 <script setup>
 import Btn_base from './components/btn_base.vue';
 
-const onlineStatus = "offline";
+const onlineStatus = "away";
 const likes = null;
 
 </script>
@@ -9,7 +9,7 @@ const likes = null;
 <template>
   <div>
     <Btn_base class="btn" :class="onlineStatus" :buttonText="onlineStatus"></Btn_base>
-    <Btn_base class="btn" buttonText="Messages" :likes="likes"></Btn_base>
+    <Btn_base class="btn" buttonText="Messages" :likes="likes > 99 ? '99+' : likes"></Btn_base>
   </div>
 </template>
 

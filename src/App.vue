@@ -1,20 +1,40 @@
 <script setup>
-import Btn_base from './components/btn_base.vue';
-
-const onlineStatus = "offline";
-const likes = 100;
+import { RouterLink, RouterView } from 'vue-router'
 
 </script>
 
 <template>
-  <div>
-    <Btn_base class="btn" :class="onlineStatus" :buttonText="onlineStatus"></Btn_base>
-    <Btn_base class="btn" buttonText="Messages" :likes="likes > 99 ? '99+' : likes"></Btn_base>
-  </div>
+      <nav>
+        <RouterLink to="/">Home</RouterLink>
+        <RouterLink to="/button">Buttons</RouterLink>
+        <RouterLink to="/inputstatus">inputStatus</RouterLink>
+        <RouterLink to="/binding">binding</RouterLink>
+        
+      </nav>
+      <main>
+        <RouterView />
+      </main>
+     
 </template>
 
 <style lang="scss" scoped>
-div {
+nav {
   display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  min-height: 10vh;
+
+  a {
+    color: white;
+    text-decoration: none;
+  }
 }
+
+  main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+  }
 </style>

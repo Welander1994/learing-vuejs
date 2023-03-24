@@ -2,6 +2,9 @@
 import { ref, onMounted } from 'vue';
 
 const changePlease = ref(false);
+const randomNumber = ref(Math.random());
+
+
 
 const person = ref({
     email: '',
@@ -17,19 +20,19 @@ const update_user = ref({
 
 const users = ref([
     {
-        "id": 1,
+
         "email": "john@doe.com",
         "firstname": "John",
         "lastname": "Doe"
     },
     {
-        "id": 2,
+
         "email": "jane@doe.com",
         "firstname": "Jane",
         "lastname": "Doe"
     },
     {
-        "id": 3,
+
         "email": "linux_fan@jmail.com",
         "firstname": "Linus",
         "lastname": "Thorvalds"
@@ -37,7 +40,10 @@ const users = ref([
 ])
 
 onMounted(() => {
-    users.value = JSON.parse(localStorage.getItem('persons'));
+
+    if(users){ 
+        users.value = JSON.parse(localStorage.getItem('persons'));
+    }
 
 })
 
@@ -55,8 +61,9 @@ let randomColor = ref('');
 function submit() {
     randomColor.value = '#' + Math.floor(Math.random() * 16777215).toString(16);
     isSubmited.value = true;
+    console.log(person.value);
     users.value.push(person.value);
-    console.log(users);
+    console.log(person);
 
     person.value = {
     email: '',
@@ -68,7 +75,7 @@ function submit() {
 }
 
 const deleteUser = (e) => {
-
+    console.log(users.value, e);
     users.value.splice(e, 1)
     localStorage.setItem('persons', JSON.stringify(users.value));
 }
@@ -88,9 +95,9 @@ const updateUser = (u, e) => {
             <div class="inputs">
                 <form v-on:keypress.enter @submit.prevent="submit">
                     <h2>Tilføj bruger</h2>
-                    <input type="text" placeholder="Email" v-model="person.email" required>
                     <input type="text" placeholder="Fornavn" v-model="person.firstname" required>
                     <input type="text" placeholder="Efternavn" v-model="person.lastname" required>
+                    <input type="text" placeholder="Email" v-model="person.email" required>
                     <input type="submit" name="submit" :style="{ backgroundColor: randomColor }">
                 </form>
             </div>
@@ -102,11 +109,11 @@ const updateUser = (u, e) => {
         </div>
 
         <div class="users" >
-            <div class="user" v-for="user, index in users">
+            <div class="user" v-for="user, index in users" :key="index">
+                {{ index }}
                 <h3>{{ user.email }}</h3>
-                <h3>{{ user.firstname }}</h3>
-                <h3>{{ user.lastname }}</h3>
-
+                <h3>{{ user.firstname }} {{ user.lastname  }}</h3>
+                
 
     <RouterLink :to="'/user/'+index">Se bruger</RouterLink>
 

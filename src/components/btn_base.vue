@@ -8,7 +8,7 @@ defineProps({
 
 <template>
 
-    <button>{{ buttonText }} <span v-if="likes"> {{ likes }} </span></button>
+    <button class="btn" :class="buttonText" > {{ buttonText }} <span v-if="likes"> {{ likes }} </span></button>
 
 </template>
 
@@ -44,10 +44,10 @@ div {
         Verdana,
         sans-serif;
 
-
+/* 
     &:hover {
 
-    }
+    } */
 
     span {
         position:absolute;
